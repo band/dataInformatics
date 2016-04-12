@@ -1,0 +1,771 @@
+@prefix cito: 	<http://purl.org/spar/cito/>.
+@prefix frbr: 	<http://purl.org/vocab/frbr/core#>.
+@prefix rdf: 	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc:  	<http://purl.org/dc/elements/1.1/>.
+@prefix cc:  	<http://web.resource.org/cc/>.
+@prefix foaf:	<http://xmlns.com/foaf/0.1/>. 	
+@prefix geo:	<http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+@base <http://example.com/myTermProject/>. # ? what is this used for?
+
+# The title of this document is "Additional File 2: Citation Metadata".
+
+# This file contains metadata descriptions of the citations in the article by
+# YOURNAME YOURPRESENTATIONTITLE PRESENTATIONURL
+
+# These metadata are prepared using CiTO v1.6 and are encoded as RDF using Notation3 format.
+# This documents validates as valid RDF using
+# http://rdf-translator.appspot.com and https://www.w3.org/RDF/Validator/
+
+# This document information file has been prepared by YOURNAMEHERE,
+# University of Texas at Austin, DATEHERE, and is licensed under the
+# Creative Commons Attribution 3.0 Unported License. To view a copy of
+# this license, visit http://creativecommons.org/licenses/by/3.0/.
+# Contact <YOUREMAILHERE> for further information.
+
+# about this metadata document ...
+<http://example.com/myProjectPresentation/suppl/S2>  # Supplementary File S2     
+	dc:creator [ a foaf:Person ; foaf:name "YOURNAMEHERE"; foaf:mbox <mailto:YOUREMAILHERE> ] ;
+        rdf:type [a cito:CitationMetadata] ; # work
+	dc:subject <http://example.com/myProjectPresentation> ;
+        cito:cites <http://example.com/myProjectPresentation> ; 
+	cito:citesAsSourceDocument <http://example.com/myProjectPresentation> ;  
+        cito:isCitedBy <http://example.com/myProjectPresentation> ;
+	dc:date	"2016-05-05"^^xsd:date ;
+	dcterms:license <https://creativecommons.org/licenses/by/3.0/> .
+
+# about the paper it describes ...
+<http://example.com/myProjectPresentation> # The INF385TS13 paper
+    dcterms:issued "2011-05-04" ;
+    cito:cites <http://example.com/myProjectPresentation/suppl/S2> ;
+    cito:citesAsMetadataDocument <http://example.com/myProjectPresentation/suppl/S2> ;
+    cito:isCitedBy <http://example.com/myProjectPresentation/suppl/S2> ;
+    cito:isRealizationOf cito:Report ; # work
+    rdf:type cito:ReportDocument ; # expression
+    cito:peerReviewed "true"^^xsd:boolean ; # peer review status  
+	dc:title "YOURPRESENTATIONTITLEHERE" ;
+	dc:identifier	<http://example.com/myProjectPresentation> ;
+	dc:language	"en" ; 
+	dcterms:bibliographicCitation	" YOURNAME (2016). YOURPRESENTATIONTITLE. URLTOPRESENTATION " .
+
+# The following reference list is for this presentation, which has NN bibliographic references and also cites NN Web sites. 
+
+# For the bibliographic references, it records not only the number of  times each cited item is cited in the text of the citing paper, but also the nature of the relationship between the citing document and the cited item.
+
+# The following details are divided into four sections:
+#	Section 1  Details of the bibliographic citations in the citing document;
+#	Section 2  Details of the cited items;
+#	Section 3  Details of Web page citations in the citing document;
+#       Section 4  Details of the cited Web pages.
+
+		
+#	Section 1  Details of the 12 bibliographic citations in the citing paper
+
+<http://example.com/myProjectPresentation>       # The INF382R presentation
+
+#B1 Cited in-text 4 times 
+    cito:cites <http://dx.doi.org/10.1371/journal.pntd.0000228> ;
+    cito:inTextCitationFrequency [a cito:InTextCitationCount ;
+      cito:inTextCountValue "4"^^xsd:integer ;
+      cito:inTextCitationTarget <http://dx.doi.org/10.1371/journal.pntd.0000228> ] ; 
+    cito:citesForInformation <http://dx.doi.org/10.1371/journal.pntd.0000228> ;
+    cito:usesDataFrom <http://dx.doi.org/10.1371/journal.pntd.0000228> ;
+
+#B2 Cited in-text 2 times
+    cito:cites <http://dx.doi.org/10.1371/journal.pcbi.1000361> ;
+    cito:inTextCitationFrequency [a cito:InTextCitationCount ;
+      cito:inTextCountValue "2"^^xsd:integer ;
+      cito:inTextCitationTarget <http://dx.doi.org/10.1371/journal.pcbi.1000361> ] ; 
+    cito:citesForInformation <http://dx.doi.org/10.1371/journal.pcbi.1000361> ;
+    cito:sharesAuthorsWith <http://dx.doi.org/10.1371/journal.pcbi.1000361> ;
+
+#B3 Cited in-text 1 time  
+    cito:cites <http://dx.doi.org/10.1136/bmj.b2680> ;
+    cito:inTextCitationFrequency [a cito:InTextCitationCount ;
+      cito:inTextCountValue "1"^^xsd:integer ;
+      cito:inTextCitationTarget <http://dx.doi.org/10.1136/bmj.b2680> ] ; 
+    cito:citesForInformation <http://dx.doi.org/10.1136/bmj.b2680> ;
+    cito:obtainsBackgroundFrom <http://dx.doi.org/10.1136/bmj.b2680> ;   
+
+#B4 Cited in-text 1 time
+    cito:cites <http://www.scielo.org.ar/scielo.php?pid=S0025-76802003000400011&script=sci_arttext&tlng=en> ; 
+    cito:inTextCitationFrequency [a cito:InTextCitationCount ;
+      cito:inTextCountValue "1"^^xsd:integer ;
+      cito:inTextCitationTarget <http://www.scielo.org.ar/scielo.php?pid=S0025-76802003000400011&script=sci_arttext&tlng=en> ] ;
+    cito:citesForInformation <http://www.scielo.org.ar/scielo.php?pid=S0025-76802003000400011&script=sci_arttext&tlng=en> ; 
+
+#B5 Cited in-text 1 time  
+    cito:cites <http://www.elsevier.com/framework_editors/pdfs/Perspectives1.pdf> ;
+    cito:inTextCitationFrequency [a cito:InTextCitationCount ;
+      cito:inTextCountValue "1"^^xsd:integer ;
+      cito:inTextCitationTarget <http://www.elsevier.com/framework_editors/pdfs/Perspectives1.pdf> ] ; 
+    cito:citesForInformation <http://www.elsevier.com/framework_editors/pdfs/Perspectives1.pdf> ;
+
+#B6 Cited in-text 1 time  
+    cito:cites <http://doi.acm.org/10.1145/1367080.1367085> ;  
+    cito:inTextCitationFrequency [a cito:InTextCitationCount ;
+      cito:inTextCountValue "1"^^xsd:integer ;
+      cito:inTextCitationTarget <http://doi.acm.org/10.1145/1367080.1367085> ] ; 
+    cito:citesForInformation <http://doi.acm.org/10.1145/1367080.1367085>  ;  
+
+#B7 Cited in-text 1 time  
+    cito:cites <http://www.emeraldinsight.com/Insight/html/Output/Published/EmeraldAbstractOnlyArticle/Pdf/2780540204.pdf> ;
+    cito:inTextCitationFrequency [a cito:InTextCitationCount ;
+      cito:inTextCountValue "1"^^xsd:integer ;
+      cito:inTextCitationTarget <http://www.emeraldinsight.com/Insight/html/Output/Published/EmeraldAbstractOnlyArticle/Pdf/2780540204.pdf> ] ; 
+    cito:citesForInformation  <http://www.emeraldinsight.com/Insight/html/Output/Published/EmeraldAbstractOnlyArticle/Pdf/2780540204.pdf> ;
+
+#B8 Cited in-text 1 time  
+    cito:cites <http://dx.doi.org/10.1039/b410732b> ;
+    cito:inTextCitationFrequency [a cito:InTextCitationCount ;
+      cito:inTextCountValue "1"^^xsd:integer ;
+      cito:inTextCitationTarget <http://dx.doi.org/10.1039/b410732b> ] ; 
+    cito:citesForInformation <http://dx.doi.org/10.1039/b410732b> ;
+
+#B9 Cited in-text 1 time  
+    cito:cites <http://www.ariadne.ac.uk/issue5/jime/intro.html> ;
+    cito:inTextCitationFrequency [a cito:InTextCitationCount ;
+      cito:inTextCountValue "1"^^xsd:integer ;
+      cito:inTextCitationTarget <http://www.ariadne.ac.uk/issue5/jime/intro.html> ] ; 
+    cito:citesForInformation <http://www.ariadne.ac.uk/issue5/jime/intro.html> ;
+
+#B10 Cited in-text 1 time  
+    cito:cites <http://ceur-ws.org/Vol-523/deWaard.pdf> ;
+    cito:inTextCitationFrequency [a cito:InTextCitationCount ;
+      cito:inTextCountValue "1"^^xsd:integer ;
+      cito:inTextCitationTarget <http://ceur-ws.org/Vol-523/deWaard.pdf> ] ; 
+    cito:citesForInformation <http://ceur-ws.org/Vol-523/deWaard.pdf> ;
+    
+#B11 Cited in-text 1 time   
+    cito:cites <http://elpub.scix.net/data/works/att/234_elpub2008.content.pdf> ;
+    cito:inTextCitationFrequency [a cito:InTextCitationCount ;
+      cito:inTextCountValue "1"^^xsd:integer ;
+      cito:inTextCitationTarget <http://elpub.scix.net/data/works/att/234_elpub2008.content.pdf> ] ; 
+    cito:obtainsBackgroundFrom <http://elpub.scix.net/data/works/att/234_elpub2008.content.pdf> ;
+
+#B12 Cited in-text 1 time  
+    cito:cites <http://imageweb.zoo.ox.ac.uk/pub/2009/publications/Shotton_ISMB_BioOntology_CiTO_final_postprint.pdf> ;
+    cito:inTextCitationFrequency [a cito:InTextCitationCount ;
+      cito:inTextCountValue "1"^^xsd:integer ;
+      cito:inTextCitationTarget <http://imageweb.zoo.ox.ac.uk/pub/2009/publications/Shotton_ISMB_BioOntology_CiTO_final_postprint.pdf> ] ; 
+    cito:citesForInformation <http://imageweb.zoo.ox.ac.uk/pub/2009/publications/Shotton_ISMB_BioOntology_CiTO_final_postprint.pdf> ;
+    cito:extends <http://imageweb.zoo.ox.ac.uk/pub/2009/publications/Shotton_ISMB_BioOntology_CiTO_final_postprint.pdf> ;   
+    cito:obtainsBackgroundFrom <http://imageweb.zoo.ox.ac.uk/pub/2009/publications/Shotton_ISMB_BioOntology_CiTO_final_postprint.pdf> ;   
+    cito:sharesAuthorsWith <http://imageweb.zoo.ox.ac.uk/pub/2009/publications/Shotton_ISMB_BioOntology_CiTO_final_postprint.pdf> ;   
+    cito:usesDataFrom <http://imageweb.zoo.ox.ac.uk/pub/2009/publications/Shotton_ISMB_BioOntology_CiTO_final_postprint.pdf> .
+
+#	Section 2  Details of the 12 cited papers
+
+# The following are citation details for the cited documents themselves, including publication dates in the format yyyy-mm-dd which allows temporal sorting.  
+
+# Where an exact date cannot be determined, the date used is just the year, e.g. dcterms:issued "2003" or just the year and month e.g. dcterms:issued "2005-10".  
+# The earliest possible date is used: thus a journal issue dated "May-June 2004" becomes dcterms:issued "2004-05", while one dated "10 November 2007-16 November 2007" becomes dcterms:issued "2007-11-10".
+
+#B1
+<http://dx.doi.org/10.1371/journal.pntd.0000228>
+    dcterms:bibliographicCitation " Reis RB, Ribeiro GS, Felzemburgh RDM, Santana FS, Mohr S, Melendez AXTO, Queiroz A, Santos AC, Ravines RR, Tassinari WS, Carvalho MS, Reis MG, Ko AI (2008). Impact of environment and social gradient on Leptospira infection in urban slums.  PLoS Neglected Tropical Diseases 2: e228." ;
+    dcterms:issued "2008-04-23" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    cito:isRealizationOf [a cito:ResearchPaper] ; # work
+    rdf:type cito:JournalArticle ; # expression 
+    cito:peerReviewed "true"^^xsd:boolean ; # peer review status  
+# Google Scholar on 13 March 2010: Cited 11 times.  
+# ISI Web of Knowledge on 13 March 2010: Cited 4 times.
+  cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "11"^^xsd:integer ;
+    cito:countSource <http://scholar.google.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ];
+cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "4"^^xsd:integer ;
+    cito:countSource <http://apps.isiknowledge.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ] .
+
+#B2
+<http://dx.doi.org/10.1371/journal.pcbi.1000361>   
+    dcterms:bibliographicCitation " Shotton D, Portwin K, Klyne G, Miles A (2009). Adventures in semantic publishing: exemplar semantic enhancement of a research article. PLoS Computational Biology 5: e1000361." ;
+    dcterms:issued "2009-04-17";
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    cito:isRealizationOf [a cito:ResearchPaper] ; # work
+    rdf:type cito:JournalArticle; # expression  
+    cito:peerReviewed "true"^^xsd:boolean ; # peer review status  
+# Google Scholar on 13 March 2010: Cited 19 times.  
+# ISI Web of Knowledge on 13 March 2010: Cited 2 times.
+  cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "19"^^xsd:integer ;
+    cito:countSource <http://scholar.google.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ];
+cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "2"^^xsd:integer ;
+    cito:countSource <http://apps.isiknowledge.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ] .
+
+#B3
+<http://dx.doi.org/10.1136/bmj.b2680>
+    dcterms:bibliographicCitation "Greenberg SA (2009). How citation distortions create unfounded authority: analysis of a citation network.  British Medical Journal 339: b2680." ;
+    dcterms:issued "2009-07-21";
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    cito:isRealizationOf [a cito:ResearchPaper] ; # work
+    rdf:type cito:JournalArticle; # expression  
+    cito:peerReviewed "true"^^xsd:boolean ; # peer review status  
+# Google Scholar on 13 March 2010: Cited 13 times.  
+# ISI Web of Knowledge on 13 March 2010: Cited 5 times.
+  cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "13"^^xsd:integer ;
+    cito:countSource <http://scholar.google.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ];
+cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "5"^^xsd:integer ;
+    cito:countSource <http://apps.isiknowledge.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ] .
+
+#B4
+<http://www.scielo.org.ar/scielo.php?pid=S0025-76802003000400011&script=sci_arttext&tlng=en>
+    dcterms:bibliographicCitation "Amin M, Mabe M (2003). Impact factors: use and abuse. Medicina (Buenos Aires) 63:347-354." ;
+    dcterms:issued "2003-07";
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    cito:isRealizationOf [a cito:Discussion ] ; # work
+    rdf:type cito:JournalArticle; # expression  
+    cito:peerReviewed "true"^^xsd:boolean ; # peer review status  
+# Google Scholar on 13 March 2010: Cited 272 times.  
+# ISI Web of Knowledge on 13 March 2010: Cited 10 times.
+  cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "272"^^xsd:integer ;
+    cito:countSource <http://scholar.google.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ];
+cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "10"^^xsd:integer ;
+    cito:countSource <http://apps.isiknowledge.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ] .
+
+#B5
+<http://www.elsevier.com/framework_editors/pdfs/Perspectives1.pdf>    
+    dcterms:bibliographicCitation " Amin M, Mabe M (2000). Impact factors: use and abuse. Perspectives in Publishing 1:1-6." ;
+    dcterms:issued "2000-10";
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    cito:isRealizationOf [a cito:Discussion ] ; # work
+    rdf:type cito:MagazineArticle; # expression  
+    cito:peerReviewed "false"^^xsd:boolean ; # peer review status  
+# Google Scholar on 13 March 2010: Cited 0 times.  
+# ISI Web of Knowledge on 13 March 2010: Cited 0 times.
+  cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "0"^^xsd:integer ;
+    cito:countSource <http://scholar.google.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ];
+cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "0"^^xsd:integer ;
+    cito:countSource <http://apps.isiknowledge.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ] .
+
+#B6
+<http://doi.acm.org/10.1145/1367080.1367085>
+    dcterms:bibliographicCitation "Doerr M, Iorizzo D (2008). The dream of a global knowledge network - a new approach. ACM J Comput Cultur Heritage 1: Article 5 (June 2008), 23 pages." ;
+    dcterms:issued "2008-06";
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    cito:isRealizationOf [a cito:Proposition ] ; # work
+    rdf:type cito:JournalArticle; # expression  
+    cito:peerReviewed "true"^^xsd:boolean ; # peer review status  
+# Google Scholar on 13 March 2010: Cited 5 times.  
+# ISI Web of Knowledge on 13 March 2010: Cited 0 times.
+  cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "5"^^xsd:integer ;
+    cito:countSource <http://scholar.google.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ];
+cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "0"^^xsd:integer ;
+    cito:countSource <http://apps.isiknowledge.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ] .
+
+#B7
+<http://www.emeraldinsight.com/Insight/html/Output/Published/EmeraldAbstractOnlyArticle/Pdf/2780540204.pdf>
+    dcterms:bibliographicCitation " Joost G, Kircz J (1998). Modularity: the next form of scientific information presentation? Journal of Documentation 54:210-235." ;
+    dcterms:issued "1998-03";
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    cito:isRealizationOf [a cito:Proposition ] ; # work
+    rdf:type cito:JournalArticle; # expression  
+    cito:peerReviewed "true"^^xsd:boolean ; # peer review status  
+# Google Scholar on 13 March 2010: Cited 45 times.  
+# ISI Web of Knowledge on 13 March 2010: Cited 22 times.
+  cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "45"^^xsd:integer ;
+    cito:countSource <http://scholar.google.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ];
+cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "22"^^xsd:integer ;
+    cito:countSource <http://apps.isiknowledge.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ] .
+
+#B8
+<http://dx.doi.org/10.1039/b410732b>
+    dcterms:bibliographicCitation "Murray-Rust P, Rzepa HS, Tyrrell SM, Zhang Y (2004). Representation and use of chemistry in the global electronic age. Organic and Biomolecular Chemistry 2:3192-3203." ;
+    dcterms:issued "2004-10-22";
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    cito:isRealizationOf [a cito:Proposition ]; # work
+    rdf:type cito:JournalArticle; # expression  
+    cito:peerReviewed "true"^^xsd:boolean ; # peer review status  
+# Google Scholar on 13 March 2010: Cited 28 times.  
+# ISI Web of Knowledge on 13 March 2010: Cited 18 times.
+  cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "28"^^xsd:integer ;
+    cito:countSource <http://scholar.google.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ];
+cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "18"^^xsd:integer ;
+    cito:countSource <http://apps.isiknowledge.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ] .
+
+#B9
+<http://www.ariadne.ac.uk/issue5/jime/intro.html>
+    dcterms:bibliographicCitation " Sumner T, Buckingham Shum S (1996). Open peer review and argumentation: loosening the paper chains on journals. Ariadne (Bi-Monthly Magazine of the UK Electronic Libraries Programme) Issue 5 (September 1996)." ;
+    dcterms:issued "1996-09";
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    cito:isRealizationOf [a cito:Review ] ; # work
+    rdf:type cito:JournalArticle; # expression  
+    cito:peerReviewed "true"^^xsd:boolean ; # peer review status  
+# Google Scholar on 13 March 2010: Cited 19 times.  
+# ISI Web of Knowledge on 13 March 2010: Cited 0 times.
+  cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "19"^^xsd:integer ;
+    cito:countSource <http://scholar.google.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ];
+cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "0"^^xsd:integer ;
+    cito:countSource <http://apps.isiknowledge.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ] .
+
+#B10
+<http://ceur-ws.org/Vol-523/deWaard.pdf>
+    dcterms:bibliographicCitation " de Waard A, Shum SB, Carusi A, Park J, Samwald M, Sandor A (2009). Hypotheses, Evidence and Relationships:The HypER Model of Representing Scientific Knowledge. Workshop on Semantic Web Applications i Scientific Discourse, 8th International Semantic Web Conference (ISWC 2009, Washington DC; 25-29 October 2009." ;
+    dcterms:issued "2009-10-26";
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    cito:isRealizationOf [a cito:Proposition ] ; # work
+    rdf:type cito:ConferencePaper; # expression  
+    cito:peerReviewed "true"^^xsd:boolean ; # peer review status  
+# Google Scholar on 13 March 2010: Cited 0 times.  
+# ISI Web of Knowledge on 13 March 2010: Cited 0 times.
+  cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "0"^^xsd:integer ;
+    cito:countSource <http://scholar.google.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ];
+cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "0"^^xsd:integer ;
+    cito:countSource <http://apps.isiknowledge.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ] .
+
+#B11
+<http://elpub.scix.net/data/works/att/234_elpub2008.content.pdf>
+    dcterms:bibliographicCitation " de Waard A, Kircz J (2008). Modeling scientific research articles – shifting perspectives and persistent issues. Proc. ELPUB2008 Conference on Electronic Publishing; pp 234-245; Toronto, Canada. June 2008." ;
+    dcterms:issued "2008-06";
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    cito:isRealizationOf [a cito:Proposition ] ; # work
+    rdf:type cito:ConferencePaper; # expression  
+    cito:peerReviewed "true"^^xsd:boolean ; # peer review status  
+# Google Scholar on 13 March 2010: Cited 2 times.  
+# ISI Web of Knowledge on 13 March 2010: Cited 0 times.
+  cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "2"^^xsd:integer ;
+    cito:countSource <http://scholar.google.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ];
+cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "0"^^xsd:integer ;
+    cito:countSource <http://apps.isiknowledge.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ] .
+
+#B12
+<http://imageweb.zoo.ox.ac.uk/pub/2009/publications/Shotton_ISMB_BioOntology_CiTO_final_postprint.pdf>
+    dcterms:bibliographicCitation " Shotton D (2009). CiTO, the Citation Typing Ontology, and its use for annotation of reference lists and visualization of citation networks. In Bio-Ontologies 2009 Special Interest Group meeting at ISMB 2009; Stockholm. 28-29 June 2009." ;
+    dcterms:issued "2009-06-28";
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    cito:isRealizationOf [a cito:Proposition ] ; # work
+    rdf:type cito:ConferencePaper; # expression  
+    cito:peerReviewed "true"^^xsd:boolean ; # peer review status  
+# Google Scholar on 13 March 2010: Cited 0 times.  
+# ISI Web of Knowledge on 13 March 2010: Cited 0 times.
+  cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "0"^^xsd:integer ;
+    cito:countSource <http://scholar.google.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ];
+cito:citationFrequency [a cito:CitationCount ;
+    cito:countValue "0"^^xsd:integer ;
+    cito:countSource <http://apps.isiknowledge.com> ;
+    cito:countDate "2010-03-13"^^xsd:date ] .
+
+
+#  Section 3  Details of the 29 Web citations within the citing paper.
+#  This section simply lists in alphabetical order the 29 URIs cited in the text of the paper, and the reason for citing.
+
+<http://example.com/myProjectPresentation>       # The CiTO paper in JBMS       
+
+#W1
+    cito:cites <http://bibliontology.com/> ;
+    cito:citesAsAuthority <http://bibliontology.com/> ;
+    cito:critiques <http://bibliontology.com/> ;
+ 
+#W2
+    cito:cites <http://cidoc.ics.forth.gr/frbr_inro.html> ;
+    cito:citesAsAuthority <http://cidoc.ics.forth.gr/frbr_inro.html> ; 
+
+#W3
+    cito:cites <http://cidoc.ics.forth.gr/index.html> ;
+    cito:citesAsAuthority <http://cidoc.ics.forth.gr/index.html> ; 
+
+#W4
+    cito:cites <http://dublincore.org/documents/dcmi-type-vocabulary/> ;
+    cito:citesAsAuthority <http://dublincore.org/documents/dcmi-type-vocabulary/> ; 
+
+#W5
+    cito:cites <http://dx.doi.org/10.1371/journal.pntd.0000228.x001> ;
+    cito:citesForInformation <http://dx.doi.org/10.1371/journal.pntd.0000228.x001> ; 
+
+#W6
+    cito:cites <http://dx.doi.org/10.1371/journal.pntd.0000228.x004> ;
+    cito:citesForInformation <http://dx.doi.org/10.1371/journal.pntd.0000228.x004> ; 
+
+#W7
+    cito:cites <http://example.com/myProjectPresentation/suppl/S1> ;
+    cito:citesAsMetadataDocument <http://example.com/myProjectPresentation/suppl/S1> ;
+
+#W8
+    cito:cites <http://example.com/myProjectPresentation/suppl/S2> ;
+    cito:citesAsMetadataDocument <http://example.com/myProjectPresentation/suppl/S2> ;
+    cito:citesAsAuthority <http://example.com/myProjectPresentation/suppl/S2> ;
+    cito:citesForInformation <http://example.com/myProjectPresentation/suppl/S2> ;
+
+#W9
+    cito:cites <http://example.com/myProjectPresentation/suppl/S3> ;
+    cito:citesAsMetadataDocument <http://example.com/myProjectPresentation/suppl/S2> ; 
+
+#W10
+    cito:cites <http://en.wikipedia.org/wiki/Notation3> ;
+    cito:citesForInformation <http://en.wikipedia.org/wiki/Notation3> ; 
+
+#W11
+    cito:cites <http://en.wikipedia.org/wiki/Resource_Description_Framework> ;
+    cito:citesForInformation <http://en.wikipedia.org/wiki/Resource_Description_Framework> ; 
+
+#W12
+    cito:cites <http://ibrg.zoo.ox.ac.uk/cito/> ;
+    cito:citesForInformation <http://ibrg.zoo.ox.ac.uk/cito/> ; 
+
+#W13
+    cito:cites <http://owl.man.ac.uk/factplusplus/> ;
+    cito:citesForInformation <http://owl.man.ac.uk/factplusplus/> ; 
+
+#W14
+    cito:cites <http://protege.stanford.edu/> ;
+    cito:citesForInformation <http://protege.stanford.edu/> ; 
+
+#W15
+    cito:cites <http://purl.org/net/cito/> ;
+    cito:citesAsAuthority <http://purl.org/net/cito/> ; 
+    cito:usedDataFrom <http://purl.org/net/cito/> ; 
+
+#W16
+    cito:cites <http://purl.org/net/semanticpublication/pntd.0000228> ;
+    cito:citesForInformation <http://purl.org/net/semanticpublication/pntd.0000228> ; 
+
+#W17
+    cito:cites <http://scholar.google.com/> ;
+    cito:citesForInformation <http://scholar.google.com/> ; 
+    cito:usedDataFrom <http://scholar.google.com/> ; 
+
+#W18
+    cito:cites <http://simile.mit.edu/wiki/Welkin> ;
+    cito:citesForInformation <http://simile.mit.edu/wiki/Welkin> ; 
+
+#W19
+    cito:cites <http://swan.mindinformatics.org/> ;
+    cito:citesForInformation <http://swan.mindinformatics.org/> ; 
+
+#W20
+    cito:cites <http://swan.mindinformatics.org/ontology.html> ;
+    cito:citesForInformation <http://swan.mindinformatics.org/ontology.html> ; 
+
+#W21
+    cito:cites <http://swan.mindinformatics.org/spec/1.2/discourserelationships.html> ;
+    cito:citesforInformation <http://swan.mindinformatics.org/spec/1.2/discourserelationships.html> ; 
+
+#W22
+    cito:cites <http://www.doi.org/> ;
+    cito:citesAsAuthority <http://www.doi.org/> ; 
+    cito:citesForInformation <http://www.doi.org/> ; 
+
+#W23
+    cito:cites <http://www.ifla.org/en/publications/functional-requirements-for-bibliographic-records> ;
+    cito:citesAsAuthority <http://www.ifla.org/en/publications/functional-requirements-for-bibliographic-records> ;
+    cito:citesForInformation <http://www.ifla.org/en/publications/functional-requirements-for-bibliographic-records> ; 
+
+#W24
+    cito:cites <http://www.isiwebofknowledge.com/> ;
+    cito:citesForInformation <http://www.isiwebofknowledge.com/> ; 
+    cito:usesDataFrom <http://www.isiwebofknowledge.com/> ; 
+
+#W25
+    cito:cites <http://www.loc.gov/cds/downloads/FRBR.PDF> ;
+    cito:citesForInformation <http://www.loc.gov/cds/downloads/FRBR.PDF> ; 
+
+#W26
+    cito:cites <http://www.scopus.com/> ;
+    cito:citesForInformation <http://www.scopus.com/> ; 
+
+#W27
+    cito:cites <http://www.ukoln.ac.uk/repositories/digirep/index/SWAP> ;
+    cito:citesForInformation <http://www.ukoln.ac.uk/repositories/digirep/index/SWAP> ; 
+
+#W28
+    cito:cites <http://www.w3.org/2001/sw/hcls/> ;
+    cito:citesAsAuthority <http://www.w3.org/2001/sw/hcls/> ; 
+    cito:citesForInformation <http://www.w3.org/2001/sw/hcls/> ;
+
+#W29
+    cito:cites <http://www.w3.org/RDF/> ;
+    cito:citesAsAuthority <http://www.w3.org/RDF/> ; 
+    cito:citesForInformation <http://www.w3.org/RDF/> .
+
+
+#  Section 4  Details of the 29 cited Web pages.
+
+#W1
+<http://bibliontology.com/> 
+    dc:subject "The Bibliographic Ontology (BIBO)" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:Ontology ] ] . #work
+
+#W2
+<http://cidoc.ics.forth.gr/frbr_inro.html> 
+    dc:subject "FRBRoo, an encoding of Functional Requirements for Bibliographic Records (FRBR) using CIDOC CRM" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:Ontology ] ] . #work
+
+#W3
+<http://cidoc.ics.forth.gr/index.html> 
+    dc:subject "The CIDOC Conceptual Reference Model (CRM)" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:Ontology ] ] . #work
+
+#W4
+<http://dublincore.org/documents/dcmi-type-vocabulary/> 
+    dc:subject "The Dublin Core Metadata Initiative (DCMI) Type Vocabulary" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:Ontology ] ] . #work
+
+#W5
+<http://dx.doi.org/10.1371/journal.pntd.0000228.x001> 
+    dc:subject " The semantically enhanced version of Reis et al. (2008) PLoS Neglected Tropical Diseases 2:e228 described in Shotton D, Portwin K, Klyne G, Miles A: Adventures in semantic publishing: exemplar semantic enhancement of a research article. PLoS Computational Biology 2009 5: e1000361 <http://dx.doi.org/10.1371/journal.pcbi.1000361>" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:JournalArticle ; # expression 
+	 cito:isRealizationOf [a cito:ResearchPaper ] ] . #work
+
+#W6
+<http://dx.doi.org/10.1371/journal.pntd.0000228.x004> 
+    dc:title "The machine-readable CiTO-annotated reference list from Reis et al. (2008) PLoS Neglected Tropical Diseases 2008, 2:e228, encoded in RDF serialized in Notation3 format" ;
+    dc:subject <http://dx.doi.org/10.1371/journal.pntd.0000228>	;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:OnlineFile ; # manifestation  
+    cito:isEmbodimentOf [a cito:SupplementaryInformation ; # expression 
+	 cito:isRealizationOf [a cito:CitationMetadata ] ] . #work
+
+#W7
+<http://example.com/myProjectPresentation/suppl/S1> 
+    dc:title "Additional File 1: Publication Metadata for Shotton DM (2010) CiTO, the Citation Typing Ontology. Journal of Biomedical Semantics 1(Suppl 1): S6." ;
+    dc:Subject <http://example.com/myProjectPresentation>	;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:OnlineFile ; # manifestation  
+    cito:isEmbodimentOf [a cito:SupplementaryInformation ; # expression 
+	 cito:isRealizationOf [a cito:Metadata ; #work
+				cito:hasPart [a cito:BibliographicMetadata ] , #work
+			 		     [a cito:EntityMetadata ] , #work
+			      		     [a cito:ProjectMetadata ] ] ] . #work
+
+#W8
+<http://example.com/myProjectPresentation/suppl/S2> 
+    dc:title "Additional File 2 of Shotton DM (2010) CiTO, the Citation Typing Ontology. Journal of Biomedical Semantics 1(Suppl 1): S6. The CiTO Vocabulary and Definitions" ;
+    dc:subject <http://purl.org/net/cito/> ; 
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:SupplementaryInformation ; # expression 
+	 cito:isRealizationOf [a cito:Ontology ] ] . #work
+
+#W9
+<http://example.com/myProjectPresentation/suppl/S3> 
+    dc:title "Additional File 3: Citation Metadata for Shotton DM (2010) CiTO, the Citation Typing Ontology. Journal of Biomedical Semantics 1(Suppl 1): S6. " ;
+    dc:subject <http://example.com/myProjectPresentation> ; 
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:OnlineFile ; # manifestation  
+    cito:isEmbodimentOf [a cito:SupplementaryInformation ; # expression 
+	 cito:isRealizationOf [a cito:CitationMetadata ] ] . #work
+
+#W10
+<http://en.wikipedia.org/wiki/Notation3> 
+    dc:subject "Notation3 serialization of RDF" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:ReferenceWork ] ] . #work
+
+#W11
+<http://en.wikipedia.org/wiki/Resource_Description_Framework> 
+    dc:subject "Wikipedia entry for Resource Description Framework (RDF)" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:ReferenceWork ] ] . #work
+
+#W12
+<http://ibrg.zoo.ox.ac.uk/cito/> 
+    dc:subject "The CiTO wiki" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WikiEntry ; # expression 
+	 cito:isRealizationOf [a cito:ReferenceWork ] ] . #work
+
+#W13
+<http://owl.man.ac.uk/factplusplus/> 
+    dc:subject "The FaCT++ OWL-DL reasoner" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebPage ; # expression 
+	 cito:isRealizationOf [a cito:ReferenceWork ] ] . #work
+
+#W14
+<http://protege.stanford.edu/> 
+    dc:subject "The Protégé ontology editor" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebPage ; # expression 
+	 cito:isRealizationOf [a cito:ReferenceWork ] ] . #work
+
+#W15
+<http://purl.org/net/cito/> 
+    dc:subject "CiTO, the Citation Typing Ontology" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    rdf:type cito:OnlineFile ; # alternate manifestation via content negotiation 
+     cito:isEmbodimentOf [a cito:Document ; # expression 
+	 cito:isRealizationOf [a cito:Ontology ] ] . #work
+
+#W16
+<http://purl.org/net/semanticpublication/pntd.0000228> 
+    dc:subject "Semantically enhanced version of the original paper by Reis et al. (2008) originally published in PLoS Neglected Tropical Disease that is Reference #4 in this paper" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:JournalArticle ; # expression 
+	 cito:isRealizationOf [a cito:ResearchPaper ] ] . #work
+
+#W17
+<http://scholar.google.com/> 
+    dc:subject "Google Scholar, a bibliographic resource from Google Inc." ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:BibliographicMetadata ] ] . #work
+
+#W18
+<http://simile.mit.edu/wiki/Welkin> 
+    dc:subject "Welkin, an open source RDF graph visualization application" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:ReferenceWork ] ] . #work
+
+#W19
+<http://swan.mindinformatics.org/> 
+    dc:subject "Semantic Web Applications in Neuromedicine (SWAN)" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:ReferenceWork ] ] . #work
+
+#W20
+<http://swan.mindinformatics.org/ontology.html> 
+    dc:subject " The SWAN ontology ecosystem" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:ReferenceWork ] ] . #work
+
+#W21
+<http://swan.mindinformatics.org/spec/1.2/discourserelationships.html> 
+    dc:subject "The SWAN Scientific Discourse Relationships Ontology" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:Ontology ] ] . #work
+
+#W22
+<http://www.doi.org/> 
+    dc:subject "The Digital Object Identifier (DOI)" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:ReferenceWork ] ] . #work
+
+#W23
+<http://www.ifla.org/VII/s13/frbr/frbr1.htm> 
+    dc:subject "Functional Requirements for Bibliographic Records (FRBR), a bibliographic data model" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:Report ] ] . #work
+
+#W24
+<http://www.isiwebofknowledge.com/> 
+    dc:subject "The ISI Web of Knowledge, a bibliographic resource from Thomson Reuters" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:BibliographicMetadata ] ] . #work
+
+#W25
+<http://www.loc.gov/cds/downloads/FRBR.PDF> 
+dc:subject "A description of the Functional Requirements for Bibliographic Records (FRBR) bibliographic data model" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:OnlineFile ; # manifestation  
+    cito:isEmbodimentOf [a cito:Document ; # expression 
+	 cito:isRealizationOf [a cito:InstructionalWork ] ] . #work
+
+#W26
+<http://www.scopus.com/> 
+    dc:subject "Scopus, a bibliographic resource from Elsevier BV" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:BibliographicMetadata ] ] . #work
+
+#W27
+<http://www.ukoln.ac.uk/repositories/digirep/index/SWAP> 
+    dc:subject "The Scholarly Works Application Profile (SWAP)" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:ReferenceWork ] ] . #work
+
+#W28
+<http://www.w3.org/2001/sw/hcls/> 
+    dc:subject "W3C Semantic Web for Health Care and Life Sciences Interest Group" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:ReferenceWork ] ] . #work
+
+#W29
+<http://www.w3.org/RDF/> 
+    dc:subject "The Resource Description Framework (RDF)" ;
+    cito:isCitedBy <http://example.com/myProjectPresentation> ;
+    rdf:type cito:WebPage ; # manifestation  
+    cito:isEmbodimentOf [a cito:WebContent ; # expression 
+	 cito:isRealizationOf [a cito:ReferenceWork ] ] . #work
+
+# /end

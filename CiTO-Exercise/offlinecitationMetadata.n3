@@ -1,0 +1,24 @@
+
+#	Section 1  Details of the bibliographic citations in the citing paper
+
+<http://example.com/myProjectPresentation>       # The S16INF382R Presentation
+
+#B0 Cited in-text 3 times
+    cito:cites <http://example.com/myResearchNotes> ;
+    cito:inTextCitationFrequency [a cito:InTextCitationCount ;
+      cito:inTextCountValue "3"^^xsd:integer ;
+      cito:inTextCitationTarget <http://example.com/myResearchNotes> ] ; 
+    cito:citesForInformation <http://example.com/myResearchNotes> ;
+    cito:usesDataFrom <http://example.com/myResearchNotes> .
+
+#	Section 2  Details of the cited items
+
+#B0
+<http://example.com/myResearchNotes>
+    dcterms:bibliographicCitation " LastName, FN (YYYY) [Research notes]. Unpublished primary data." ;
+    dcterms:issued "2016-05-05" ;
+    cito:isCitedBy <http://example.com/myProjectReport> ;
+    cito:isRealizationOf [a foaf:Document] ; # work
+    rdf:type cito:Document . # expression 
+
+# /end

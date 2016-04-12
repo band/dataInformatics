@@ -1,0 +1,109 @@
+@prefix cito: 	<http://purl.org/spar/cito/>.
+@prefix frbr: 	<http://purl.org/vocab/frbr/core#>.
+@prefix rdf: 	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc:  	<http://purl.org/dc/elements/1.1/>.
+@prefix cc:  	<http://web.resource.org/cc/>.
+@prefix foaf:	<http://xmlns.com/foaf/0.1/>. 	
+@prefix geo:	<http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+@base <http://example.com/myProjectPresentation>.   # The presentation
+
+# The title of this document is "Supplementary File S1: Project Presentation Metadata".
+
+# This file contains metadata descriptions of the paper by
+# YOURNAMEHERE (2016). YOURPROJECTTITLEHERE. INF382R.
+
+# These metadata are prepared using CiTO v1.6 and are encoded as RDF using Notation3 format.
+# This documents validates as valid RDF using
+# http://rdf-translator.appspot.com and https://www.w3.org/RDF/Validator/
+
+# This document information file has been prepared by YOURNAMEHERE,
+# University of Texas at Austin, DATEHERE, and is licensed under the
+# Creative Commons Attribution 3.0 Unported License. To view a copy of
+# this license, visit http://creativecommons.org/licenses/by/3.0/.
+
+# 
+# Contact <YOUREMAILHERE> for further information.
+
+# about this metadata document ...
+<http://example.com/myProjectPresentation/suppl/S1> # Supplementary File S1
+	dc:creator [ a foaf:Person ; foaf:name "YOURNAMEHERE" ; foaf:mbox "YOUREMAILHERE" ] ;
+        rdf:type cito:BibliographicMetadata ; # work
+        rdf:type cito:EntityMetadata ; # work
+        rdf:type cito:ProjectMetadata ; # work
+	dc:date	"2016-05-05"^^xsd:date ;
+	dcterms:license <https://creativecommons.org/licenses/by/3.0/> ;
+        cito:isCitedBy <http://example.com/myProjectPresentation> ;
+	cito:cites <http://example.com/myProjectPresentation> ;  
+	cito:citesAsSourceDocument <http://example.com/myProjectPresentation> .
+
+# about the presentation it describes ...
+<http://example.com/myProjectPresentation>   # The S16INF382R presentation	
+    dcterms:issued "2016-05-05";
+    cito:isCitedBy <http://example.com/myProjectPresentation/suppl/S1> ;
+    cito:citesAsMetadataDocument <http://example.com/myProjectPresentation/suppl/S1> ;  
+    cito:isRealizationOf cito:Report ; # work
+    rdf:type cito:ReportDocument; # expression
+    cito:peerReviewed "true"^^xsd:boolean ; # peer review status  
+	dc:title "YOURPROJECTTITLEHERE" ;
+	dc:identifier <http://example.com/myProjectPresentation> ;
+	dc:language "en" ; 
+	dcterms:publisher [ a dcterms:Agent ;
+			      foaf:homepage <https://utexas.instructure.com/courses/1160638/> ;
+			      dc:title "INF382R" ] ;
+	dcterms:issued "2016";	
+	dcterms:abstract 		"""
+					<p> YOUR1SENTENCESUMMARYHERE. </p>
+                            """^^rdfs:xmlLiteral ; 
+## Author 
+	dc:creator [ a foaf:Person ; 
+		       foaf:name "YOURNAME"; 
+		       foaf:firstName "YOURFIRSTNAME";
+		       foaf:surname "YOURSURNAME";
+		       foaf:mbox "YOUREMAILHERE" ;
+		       foaf:workplaceHomePage <http://example.com/YOURHOMEPAGEHERE> ] ;
+	
+## Copyright 
+	dcterms:license 	<http://www.copyright.gov/title17/> ;
+		
+## Tags / Keywords  
+	dc:subject	"bibliography",
+			"Bibliographic Ontology",
+			"BIBO",
+			"citation",
+			"citation frequency",
+			"citation network",
+			"Citation Typing Ontology",
+			"CiTO",
+			"Dublin Core Metadata Initiative",
+			"DCMI",
+			"Functional Requirements for Bibliographic Records",
+			"FRBF",
+			"FRBRoo",
+			"FRBR expression",
+			"FRBR manifestation",
+			"FRBR work",
+			"ontology",
+			"reference",
+			"rhetoric",
+			"Scientific Discourse Relationships Ontology",
+			"SWAN",
+			"Scholarly Works Application Profile",
+			"SWAP" ;
+
+## Geo-coordinates of study location 
+	dcterms:spatial	 [ a dcterms:Location ;
+			     geo:lat	"+30.28604";
+			     geo:long	"-97.73889";
+			     rdfs:label	"University of Texas at Austin, USA" ] ;
+
+## Temporal coordinates of study  
+	dcterms:temporal [ a dcterms:PeriodOfTime ;
+			     time:hasBeginning [a time:Instant ; time:inXSDDateTime "2016-01-21"^^xsd:datetime ] ; 
+			     time:hasEnd [a time:Instant ; time:inXSDDateTime "2016-05-05"^^xsd:datetime ] ] .
+ 	
+# /end
