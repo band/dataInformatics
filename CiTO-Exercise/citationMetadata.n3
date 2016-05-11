@@ -10,7 +10,7 @@
 @prefix time: <http://www.w3.org/2006/time#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
-@base <http://example.com/myTermProject/>. # ? what is this used for?
+@base <http://example.com/myTermProject/>.  # define a base: URI
 
 # The title of this document is "Additional File 2: Citation Metadata".
 
@@ -357,7 +357,7 @@ cito:citationFrequency [a cito:CitationCount ;
 
 #B11
 <http://elpub.scix.net/data/works/att/234_elpub2008.content.pdf>
-    dcterms:bibliographicCitation " de Waard A, Kircz J (2008). Modeling scientific research articles – shifting perspectives and persistent issues. Proc. ELPUB2008 Conference on Electronic Publishing; pp 234-245; Toronto, Canada. June 2008." ;
+    dcterms:bibliographicCitation " de Waard A, Kircz J (2008). Modeling scientific research articles Â– shifting perspectives and persistent issues. Proc. ELPUB2008 Conference on Electronic Publishing; pp 234-245; Toronto, Canada. June 2008." ;
     dcterms:issued "2008-06";
     cito:isCitedBy <http://example.com/myProjectPresentation> ;
     cito:isRealizationOf [a cito:Proposition ] ; # work
@@ -641,7 +641,7 @@ cito:citationFrequency [a cito:CitationCount ;
 
 #W14
 <http://protege.stanford.edu/> 
-    dc:subject "The Protégé ontology editor" ;
+    dc:subject "The ProtÃ©gÃ© ontology editor" ;
     cito:isCitedBy <http://example.com/myProjectPresentation> ;
     rdf:type cito:WebPage ; # manifestation  
     cito:isEmbodimentOf [a cito:WebPage ; # expression 
