@@ -1,0 +1,23 @@
+2016-05-15
+copied from a 2016-05-01 tweet by Ranti Junus:
+
+Meta-Level Science: Lessons from Artificial Intelligence, Software
+Engineering, and Computer Science.
+
+Science is a continual and methodical process to match models to data
+(phenomenom) for utilitarian purposes.
+
+Science has the following Elements:
+  - Data
+  - Models (e.g. Theories)
+  - Properties of Models, including computational characteristics and
+  data matching measures.
+  - Properties of Data, including measures of how data matches the
+    real world.
+
+Science has no opinions, has no votes, no laws, no authorities, only
+naked properties, measures, and characteristics.
+
+[WLA note: some good ideas and some confused ideas all mixed up
+together.]
+

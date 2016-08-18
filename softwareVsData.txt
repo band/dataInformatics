@@ -1,0 +1,20 @@
+2016-08-18: https://github.com/danielskatz/software-vs-data/issues/6
+
+Comment added: regarding information and evidence regarding the
+lifetime of scientifc data, a 1995 NRC Report "Preserving Scientific
+Data on Our Physical Universe" (http://www.nap.edu/catalog/4871.html) provides the following
+recommendations regarding retention criteria and the appraisal
+process (p. 40):
+"As a general rule, all observational data that are nonredundant,
+useful, and documented well enough for most primary uses should be
+permanently maintained. Laboratory data sets are candidates for
+long-term preservation if there is no realistic chance of repeating
+the experiment, or if the cost and intellectual effort required to
+collect and validate the data were so great that the long-term
+retention is clearly justified. For both observational and
+experimental data, the following retention criteria should be used
+to determine whether a data set should be saved: uniqueness, adequacy
+of documentation (metadata), availability of hardware to read the data
+records, cost of replacement, and evaluation by peer review. Complete
+metadata should define the content, format or representation,
+structure, and context of a data set."
