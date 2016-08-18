@@ -10,7 +10,7 @@
 @prefix time: <http://www.w3.org/2006/time#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
-@base <http://example.com/myProjectPresentation>.   # The presentation
+@base <http://example.com/myProjectPresentation>.   # define @base prefix
 
 # The title of this document is "Supplementary File S1: Project Presentation Metadata".
 
